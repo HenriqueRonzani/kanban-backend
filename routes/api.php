@@ -10,6 +10,12 @@ Route::prefix('auth')
         require base_path('app/Domains/Auth/Http/Routes/AuthRoutes.php');
     });
 
+Route::prefix('kanban')
+    ->middleware('auth:sanctum')
+    ->group(function () {
+        require base_path('app/Domains/Kanban/Http/Routes/TabRoutes.php');
+    });
+
 //Route::get('/user', function (Request $request) {
 //    return $request->user();
 //})->middleware('auth:sanctum');
