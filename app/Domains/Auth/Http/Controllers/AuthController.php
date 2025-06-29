@@ -44,7 +44,7 @@ class AuthController
             return response()->json([
                 'token' => $token,
                 'user' => $newUser->only(['id', 'name', 'email']),
-            ]);
+            ], 200);
         } catch (Exception $e) {
             DB::rollBack();
             return response()->json(
