@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->enum('status', ['pendent', 'finished', 'canceled']);
+            $table->enum('status', ['pendent', 'doing', 'finished', 'canceled']);
 
             $table->foreignId('tab_id')->
                 references('id')->
